@@ -1,7 +1,7 @@
 var title = document.querySelector(".moviedetailsTitle").innerHTML;
 var runtime = [...document.querySelectorAll(".moviedetails__sub")].slice(-2, -1).map(x => parseInt(x.innerHTML))[0];
 
-var show_date = document.querySelector(".showtime-slider--date button.selected").innerText.split("\n")[1];
+var show_date = document.querySelector(".showtime-slider--date button.selected").innerText.split("\n")[1].split("/").map(x => x.padStart(2, "0")).join("/");
 var theater = document.querySelector(".showtime-slider--cinema button.selected").innerText.split(" \n")[0];
 var show_times = [...document.querySelectorAll(".showtime-slider--time .status--onsale")].filter(x => !x.parentNode.classList.contains("invalid")).map(x => x.innerText);
 
