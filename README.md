@@ -1,21 +1,17 @@
 # MovieScheduler
 
-**TODO: Add description**
+Working on an idea for candidate interviews, where, given a listing of movie
+times in one of a few formats, they should attempt to maximize the number of
+movies they could see, with no repeats.
 
-## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `movie_scheduler` to your list of dependencies in `mix.exs`:
+## How to Use
 
-```elixir
-def deps do
-  [
-    {:movie_scheduler, "~> 0.1.0"}
-  ]
-end
-```
+Simply run `mix test`, and the existing tests will run both the CSV and JSON
+schedulers and output optimized movie schedules.
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/movie_scheduler>.
+## Ideas for future improvements
 
+- Calculate travel time between different theaters
+- Allow for wiggle room if one movie's end time overlaps the trailers at the
+  beginning of the next
