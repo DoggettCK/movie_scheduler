@@ -13,9 +13,9 @@ defmodule MovieScheduler.JSONTest do
     # expected_showtimes = []
 
     # assert ^expected_showtimes =
-      showtime_json
-      |> MovieScheduler.get_showtimes()
-      |> MovieScheduler.optimize_schedule()
-      |> MovieScheduler.print_schedule()
+    showtime_json
+    |> MovieScheduler.get_showtimes()
+    |> MovieScheduler.optimize_schedule()
+    |> MovieScheduler.print_schedule()
   end
 end

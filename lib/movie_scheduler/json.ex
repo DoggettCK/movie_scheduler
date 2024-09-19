@@ -9,8 +9,8 @@ defmodule MovieScheduler.JSON do
   @trailers_length 15
 
   @days_of_week ~w(Monday Tuesday Wednesday Thursday Friday Saturday Sunday)
-  |> Enum.with_index(1)
-  |> Enum.into(%{}, fn {k, v} -> {v, k} end)
+                |> Enum.with_index(1)
+                |> Enum.into(%{}, fn {k, v} -> {v, k} end)
 
   @doc """
   Given a parsed map of movie showtimes (see
@@ -57,6 +57,7 @@ defmodule MovieScheduler.JSON do
       _ ->
         schedule
     end
+
     # TODO: Wiggle room if next start is within trailer time at same theater
     # TODO: Travel time to other theaters
   end
@@ -88,8 +89,8 @@ defmodule MovieScheduler.JSON do
 
     {hour, am_pm} =
       cond do
-        datetime.hour == 0  -> {12, "AM"}
-        datetime.hour == 12  -> {12, "PM"}
+        datetime.hour == 0 -> {12, "AM"}
+        datetime.hour == 12 -> {12, "PM"}
         datetime.hour > 12 -> {rem(datetime.hour, 12), "PM"}
         true -> {datetime.hour, "AM"}
       end

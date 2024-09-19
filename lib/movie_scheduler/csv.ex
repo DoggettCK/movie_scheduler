@@ -9,8 +9,8 @@ defmodule MovieScheduler.CSV do
   @trailers_length 15
 
   @days_of_week ~w(Monday Tuesday Wednesday Thursday Friday Saturday Sunday)
-  |> Enum.with_index(1)
-  |> Enum.into(%{}, fn {k, v} -> {v, k} end)
+                |> Enum.with_index(1)
+                |> Enum.into(%{}, fn {k, v} -> {v, k} end)
 
   @doc """
   Given a list of CSV lines of movie showtimes, return a list of
@@ -52,6 +52,7 @@ defmodule MovieScheduler.CSV do
       _ ->
         schedule
     end
+
     # TODO: Wiggle room if next start is within trailer time at same theater
     # TODO: Travel time to other theaters
   end
@@ -83,8 +84,8 @@ defmodule MovieScheduler.CSV do
 
     {hour, am_pm} =
       cond do
-        datetime.hour == 0  -> {12, "AM"}
-        datetime.hour == 12  -> {12, "PM"}
+        datetime.hour == 0 -> {12, "AM"}
+        datetime.hour == 12 -> {12, "PM"}
         datetime.hour > 12 -> {rem(datetime.hour, 12), "PM"}
         true -> {datetime.hour, "AM"}
       end
@@ -128,6 +129,7 @@ defmodule MovieScheduler.CSV do
       minute: minute,
       second: 0
     }
+
     end_time = NaiveDateTime.add(start_time, runtime + @trailers_length, :minute)
 
     %{
@@ -141,8 +143,8 @@ defmodule MovieScheduler.CSV do
 
   defp parse_ints_from_string(str) do
     ~r/\d+/
-      |> Regex.scan(str)
-      |> List.flatten()
-      |> Enum.map(&String.to_integer/1)
+    |> Regex.scan(str)
+    |> List.flatten()
+    |> Enum.map(&String.to_integer/1)
   end
 end
