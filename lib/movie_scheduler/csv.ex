@@ -104,32 +104,15 @@ defmodule MovieScheduler.CSV do
   end
 
   defp parse_showtimes(movie) do
-    [title, runtime, theater, date, time] = movie
+    %{
+      "cinema_name" => theater,
+      "film_name" => title,
+      "film_runtime" => runtime,
+      "start_time" => start_time_str
+    } = movie
 
-    [month, day] = parse_ints_from_string(date)
-    [hour, minute] = parse_ints_from_string(time)
     runtime = String.to_integer(runtime)
-
-    today = Date.utc_today()
-
-    year =
-      case {today.month, month} do
-        {12, 1} ->
-          today.year + 1
-
-        _ ->
-          today.year
-      end
-
-    start_time = %NaiveDateTime{
-      year: year,
-      month: month,
-      day: day,
-      hour: hour,
-      minute: minute,
-      second: 0
-    }
-
+    start_time = NaiveDateTime.from_iso8601!(start_time_str)
     end_time = NaiveDateTime.add(start_time, runtime + @trailers_length, :minute)
 
     %{
@@ -139,12 +122,5 @@ defmodule MovieScheduler.CSV do
       start_time: start_time,
       end_time: end_time
     }
-  end
-
-  defp parse_ints_from_string(str) do
-    ~r/\d+/
-    |> Regex.scan(str)
-    |> List.flatten()
-    |> Enum.map(&String.to_integer/1)
   end
 end

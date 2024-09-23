@@ -1,13 +1,14 @@
-"O Brother, Where Art Thou?","107","Village","7/20","22:20"
-"Raising Arizona","94","Village","7/20","19:35"
-"The Adventures of Buckaroo Banzai Across The 8th Dimension","103","Mueller","7/21","12:25"
-"The Adventures of Buckaroo Banzai Across The 8th Dimension","103","Slaughter Lane","7/21","12:00"
-"The Adventures of Buckaroo Banzai Across The 8th Dimension","103","South Lamar","7/20","12:00"
-"The Adventures of Buckaroo Banzai Across The 8th Dimension","103","South Lamar","7/21","12:00"
-"Twisters","122","Village","7/20","15:50"
-"Twisters","122","Village","7/20","18:30"
-"Twisters","122","Village","7/20","21:50"
-"Twisters","122","Village","7/21","11:40"
-"Twisters","122","Village","7/21","15:10"
-"Twisters","122","Village","7/21","18:30"
-"Twisters","122","Village","7/21","21:50"
+film_name,film_runtime,cinema_name,start_time
+"O Brother, Where Art Thou?",107,Village,2024-7-20T22:20:00
+Raising Arizona,94,Village,2024-7-20T19:35:00
+The Adventures of Buckaroo Banzai Across The 8th Dimension,103,Mueller,2024-7-21T12:25:00
+The Adventures of Buckaroo Banzai Across The 8th Dimension,103,Slaughter Lane,2024-7-21T12:00:00
+The Adventures of Buckaroo Banzai Across The 8th Dimension,103,South Lamar,2024-7-20T12:00:00
+The Adventures of Buckaroo Banzai Across The 8th Dimension,103,South Lamar,2024-7-21T12:00:00
+Twisters,122,Village,2024-7-20T15:50:00
+Twisters,122,Village,2024-7-20T18:30:00
+Twisters,122,Village,2024-7-20T21:50:00
+Twisters,122,Village,2024-7-21T11:40:00
+Twisters,122,Village,2024-7-21T15:10:00
+Twisters,122,Village,2024-7-21T18:30:00
+Twisters,122,Village,2024-7-21T21:50:00

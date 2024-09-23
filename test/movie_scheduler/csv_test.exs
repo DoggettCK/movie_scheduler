@@ -7,9 +7,8 @@ defmodule MovieScheduler.CSVTest do
   test "gets a list of showtimes from csv" do
     showtime_csv =
       "test/fixtures/showtimes.csv"
-      |> File.read!()
-      |> String.split("\r", trim: true)
-      |> CSV.decode!()
+      |> File.stream!()
+      |> CSV.decode!(headers: true)
       |> Enum.to_list()
 
     # expected_showtimes = []

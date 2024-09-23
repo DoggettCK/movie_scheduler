@@ -1,22 +1,23 @@
-"Dìdi","93","South Lamar","8/2","20:00"
-"Dìdi","93","South Lamar","8/4","14:10"
-"Dìdi","93","South Lamar","8/4","20:00"
-"Dìdi","93","South Lamar","8/4","22:50"
-"Dune (1984)","137","South Lamar","8/2","21:45"
-"I Know Where I'm Going","91","AFS","8/4","18:30"
-"Kneecap","105","South Lamar","8/2","18:35"
-"Kneecap","105","South Lamar","8/4","18:35"
-"The Wizard of Oz (1939) Movie Party","102","Village","8/4","11:00"
-"Trap","105","South Lamar","8/2","15:45"
-"Trap","105","South Lamar","8/2","18:50"
-"Trap","105","South Lamar","8/2","20:20"
-"Trap","105","South Lamar","8/2","22:00"
-"Trap","105","South Lamar","8/4","18:45"
-"Trap","105","Village","8/2","16:00"
-"Trap","105","Village","8/2","19:00"
-"Trap","105","Village","8/2","22:00"
-"Trap","105","Village","8/4","10:00"
-"Trap","105","Village","8/4","13:00"
-"Trap","105","Village","8/4","16:00"
-"Trap","105","Village","8/4","19:00"
-"Trap","105","Village","8/4","22:00"
+film_name,film_runtime,cinema_name,start_time
+Dìdi,93,South Lamar,2024-8-2T20:00:00
+Dìdi,93,South Lamar,2024-8-4T14:10:00
+Dìdi,93,South Lamar,2024-8-4T20:00:00
+Dìdi,93,South Lamar,2024-8-4T22:50:00
+Dune (1984),137,South Lamar,2024-8-2T21:45:00
+I Know Where I'm Going,91,AFS,2024-8-4T18:30:00
+Kneecap,105,South Lamar,2024-8-2T18:35:00
+Kneecap,105,South Lamar,2024-8-4T18:35:00
+The Wizard of Oz (1939) Movie Party,102,Village,2024-8-4T11:00:00
+Trap,105,South Lamar,2024-8-2T15:45:00
+Trap,105,South Lamar,2024-8-2T18:50:00
+Trap,105,South Lamar,2024-8-2T20:20:00
+Trap,105,South Lamar,2024-8-2T22:00:00
+Trap,105,South Lamar,2024-8-4T18:45:00
+Trap,105,Village,2024-8-2T16:00:00
+Trap,105,Village,2024-8-2T19:00:00
+Trap,105,Village,2024-8-2T22:00:00
+Trap,105,Village,2024-8-4T10:00:00
+Trap,105,Village,2024-8-4T13:00:00
+Trap,105,Village,2024-8-4T16:00:00
+Trap,105,Village,2024-8-4T19:00:00
+Trap,105,Village,2024-8-4T22:00:00

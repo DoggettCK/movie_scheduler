@@ -1,22 +1,43 @@
-"Speak No Evil (2024)","110","Slaughter Lane","09/14","19:00"
-"Speak No Evil (2024)","110","Slaughter Lane","09/14","22:15"
-"Speak No Evil (2024)","110","Slaughter Lane","09/15","13:05"
-"Speak No Evil (2024)","110","Slaughter Lane","09/15","16:10"
-"Speak No Evil (2024)","110","Slaughter Lane","09/15","19:20"
-"Speak No Evil (2024)","110","South Lamar","09/14","19:55"
-"Speak No Evil (2024)","110","South Lamar","09/14","22:40"
-"Speak No Evil (2024)","110","South Lamar","09/15","12:20"
-"Speak No Evil (2024)","110","South Lamar","09/15","15:20"
-"Speak No Evil (2024)","110","South Lamar","09/15","18:20"
-"Speak No Evil (2024)","110","South Lamar","09/15","22:00"
-"Speak No Evil (2024)","110","Village","09/14","19:00"
-"Speak No Evil (2024)","110","Village","09/14","22:20"
-"Speak No Evil (2024)","110","Village","09/15","13:00"
-"Speak No Evil (2024)","110","Village","09/15","16:00"
-"Speak No Evil (2024)","110","Village","09/15","19:00"
-"Speak No Evil (2024)","110","Village","09/15","21:55"
-"The Deer Hunter","183","Mueller","09/14","14:45"
-"The Killer's Game","104","Slaughter Lane","09/14","21:20"
-"The Killer's Game","104","Slaughter Lane","09/15","12:30"
-"The Killer's Game","104","Slaughter Lane","09/15","15:25"
-"The Killer's Game","104","Slaughter Lane","09/15","18:20"
+film_name,film_runtime,cinema_name,start_time
+BEING THERE,145,South Lamar,2024-09-29T14:45:00
+CLASH OF THE WOLVES,89,South Lamar,2024-09-29T12:25:00
+HOOP DREAMS,188,South Lamar,2024-09-28T11:30:00
+MEGALOPOLIS,153,South Lamar,2024-09-27T19:00:00
+MEGALOPOLIS,153,South Lamar,2024-09-27T22:25:00
+MEGALOPOLIS,153,South Lamar,2024-09-28T19:00:00
+MEGALOPOLIS,153,South Lamar,2024-09-28T22:25:00
+MEGALOPOLIS,153,South Lamar,2024-09-29T19:00:00
+MEGALOPOLIS,153,South Lamar,2024-09-29T22:25:00
+NEIGE (aka SNOW),105,South Lamar,2024-09-28T15:30:00
+Sing-a-long-a THE GREATEST SHOWMAN,120,Mueller,2024-09-29T11:00:00
+Sing-a-long-a THE GREATEST SHOWMAN,120,Slaughter Lane,2024-09-29T11:00:00
+Sing-a-long-a THE GREATEST SHOWMAN,120,Village,2024-09-29T11:00:00
+THE JERK,109,Mueller,2024-09-30T19:00:00
+THE JERK,109,Slaughter Lane,2024-09-30T19:00:00
+THE JERK,109,South Lamar,2024-09-30T18:45:00
+THE JERK,109,Village,2024-09-27T19:00:00
+THE WILD ROBOT,117,Mueller,2024-09-27T12:30:00
+THE WILD ROBOT,117,Mueller,2024-09-27T15:15:00
+THE WILD ROBOT,117,Mueller,2024-09-27T18:00:00
+THE WILD ROBOT,117,Mueller,2024-09-27T21:00:00
+THE WILD ROBOT,117,Mueller,2024-09-28T12:00:00
+THE WILD ROBOT,117,Mueller,2024-09-28T15:00:00
+THE WILD ROBOT,117,Mueller,2024-09-28T18:00:00
+THE WILD ROBOT,117,Mueller,2024-09-28T21:00:00
+THE WILD ROBOT,117,Mueller,2024-09-29T12:00:00
+THE WILD ROBOT,117,Mueller,2024-09-29T15:00:00
+THE WILD ROBOT,117,Mueller,2024-09-29T18:00:00
+THE WILD ROBOT,117,Mueller,2024-09-30T18:00:00
+THE WILD ROBOT,117,Slaughter Lane,2024-09-27T12:15:00
+THE WILD ROBOT,117,Slaughter Lane,2024-09-27T15:10:00
+THE WILD ROBOT,117,Slaughter Lane,2024-09-27T18:00:00
+THE WILD ROBOT,117,Slaughter Lane,2024-09-27T21:00:00
+THE WILD ROBOT,117,Slaughter Lane,2024-09-28T10:00:00
+THE WILD ROBOT,117,Slaughter Lane,2024-09-28T12:50:00
+THE WILD ROBOT,117,Slaughter Lane,2024-09-28T15:40:00
+THE WILD ROBOT,117,Slaughter Lane,2024-09-28T18:30:00
+THE WILD ROBOT,117,Slaughter Lane,2024-09-28T21:20:00
+THE WILD ROBOT,117,Slaughter Lane,2024-09-29T10:00:00
+THE WILD ROBOT,117,Slaughter Lane,2024-09-29T12:50:00
+THE WILD ROBOT,117,Slaughter Lane,2024-09-29T15:40:00
+THE WILD ROBOT,117,Slaughter Lane,2024-09-29T18:30:00
