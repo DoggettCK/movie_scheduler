@@ -118,16 +118,18 @@ defmodule Mix.Tasks.Schedule do
     |> List.flatten()
     |> Stream.filter(&Map.has_key?(valid_dates, &1["DateId"]))
     |> Enum.filter(&Map.has_key?(&1, "Films"))
-    |> Enum.flat_map(&(build_films_by_day(movie_detail, &1)))
+    |> Enum.flat_map(&build_films_by_day(movie_detail, &1))
   end
 
   defp build_films_by_day(movie_detail, day) do
     day["Films"]
     |> Enum.flat_map(fn film ->
-      movie_detail = %{
-        film_name: film["FilmName"],
-        film_runtime: film["FilmRuntime"]
-      } |> Map.merge(movie_detail)
+      movie_detail =
+        %{
+          film_name: film["FilmName"],
+          film_runtime: film["FilmRuntime"]
+        }
+        |> Map.merge(movie_detail)
 
       film
       |> get_in(["Series", Access.all(), "Formats", Access.all(), "Sessions", Access.all()])
