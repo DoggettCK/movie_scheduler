@@ -3,11 +3,6 @@ defmodule MovieScheduler.CSV do
   Documentation for `MovieScheduler.CSV`.
   """
 
-  # Trailers are always 15 minutes, which adds to runtime, but you could also
-  # use it to not be so strict with the start time and show up up to 15 minutes
-  # "late".
-  @trailers_length 15
-
   @days_of_week ~w(Monday Tuesday Wednesday Thursday Friday Saturday Sunday)
                 |> Enum.with_index(1)
                 |> Enum.into(%{}, fn {k, v} -> {v, k} end)
@@ -113,7 +108,7 @@ defmodule MovieScheduler.CSV do
 
     runtime = String.to_integer(runtime)
     start_time = NaiveDateTime.from_iso8601!(start_time_str)
-    end_time = NaiveDateTime.add(start_time, runtime + @trailers_length, :minute)
+    end_time = NaiveDateTime.add(start_time, runtime, :minute)
 
     %{
       title: title,
