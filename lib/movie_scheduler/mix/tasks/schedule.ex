@@ -34,6 +34,7 @@ defmodule Mix.Tasks.Schedule do
     |> Enum.reduce([], fn name, showtimes ->
       showtimes ++ fetch_schedule_from_theater(name, from, until)
     end)
+    |> Enum.sort_by(&{&1.film_name, &1.cinema_name, &1.start_time})
     |> CSV.encode(headers: @csv_headers)
     |> Enum.join("")
     |> IO.puts()

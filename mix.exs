@@ -25,7 +25,7 @@ defmodule MovieScheduler.MixProject do
       {:date_time_parser, "~> 1.2"},
       {:httpoison, "~> 2.2"},
       {:jason, "~> 1.4"},
-      {:mix_test_watch, "~> 1.2", only: [:dev], runtime: false},
+      {:mix_test_watch, "~> 1.2", only: [:dev, :test], runtime: false},
       {:scribe, "~> 0.10"}
     ]
   end
