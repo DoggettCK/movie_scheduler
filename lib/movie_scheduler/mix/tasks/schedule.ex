@@ -37,6 +37,8 @@ defmodule Mix.Tasks.Schedule do
     |> Enum.sort_by(&{&1.film_name, &1.cinema_name, &1.start_time})
     |> CSV.encode(headers: @csv_headers)
     |> Enum.join("")
+    |> String.replace("\r\n", "\n")
+    |> String.trim()
     |> IO.puts()
   end
 
