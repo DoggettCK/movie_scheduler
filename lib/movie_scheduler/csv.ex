@@ -20,12 +20,7 @@ defmodule MovieScheduler.CSV do
     |> Map.drop([:last_finish])
     |> Map.values()
     |> Enum.sort_by(& &1.start_time, NaiveDateTime)
-    |> Scribe.print(
-      data: [{Theater, :theater}, {Title, :title}, {Time, &print/1}],
-      style: Scribe.Style.GithubMarkdown,
-      alignment: :right,
-      width: 120
-    )
+    |> Scribe.print(data: [{Theater, :theater}, {Title, :title}, {Time, &print/1}])
 
     :ok
   end
