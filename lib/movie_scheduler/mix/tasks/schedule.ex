@@ -101,15 +101,15 @@ defmodule Mix.Tasks.Schedule do
   end
 
   defp build_filter_dates(from, until) do
-    [start_date, end_date] = Enum.sort([from, until])
+    dates =
+      case Date.compare(from, until) do
+        :eq -> [from]
+        :lt -> Date.range(from, until)
+        :gt -> Date.range(until, from)
+      end
 
-    start_date
-    |> Date.range(end_date)
-    |> Enum.into(%{}, fn date ->
-      {
-        date |> Date.to_iso8601() |> String.replace("-", ""),
-        true
-      }
+    Enum.into(dates, MapSet.new(), fn date ->
+      date |> Date.to_iso8601() |> String.replace("-", "")
     end)
   end
 
@@ -119,7 +119,7 @@ defmodule Mix.Tasks.Schedule do
     cinema
     |> get_in(["Months", Access.all(), "Weeks", Access.all(), "Days", Access.all()])
     |> List.flatten()
-    |> Stream.filter(&Map.has_key?(valid_dates, &1["DateId"]))
+    |> Stream.filter(&(&1["DateId"] in valid_dates))
     |> Enum.filter(&Map.has_key?(&1, "Films"))
     |> Enum.flat_map(&build_films_by_day(movie_detail, &1))
   end
