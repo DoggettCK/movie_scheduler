@@ -9,6 +9,7 @@ defmodule Mix.Tasks.Schedule do
   ## Command line options
     * `--from` - ISO8601 date to start filtering showtimes, defaults to today
     * `--until` - ISO8601 date to end filtering showtimes, defaults to a week from today
+    * `--output` - File to save showtimes to. Defaults to standard output if unspecified
   """
 
   @theaters %{
@@ -20,7 +21,7 @@ defmodule Mix.Tasks.Schedule do
   }
   @csv_headers ~w(film_name film_runtime cinema_name start_time)a
 
-  @switches [from: :string, until: :string, test: :boolean]
+  @switches [from: :string, until: :string, output: :string]
 
   def run(args) do
     Application.ensure_all_started(:hackney)
@@ -28,6 +29,7 @@ defmodule Mix.Tasks.Schedule do
 
     from = parse_date_from_flags(flags, :from)
     until = parse_date_from_flags(flags, :until)
+    output = Keyword.get(flags, :output, :stdout)
 
     @theaters
     |> Map.keys()
@@ -35,11 +37,24 @@ defmodule Mix.Tasks.Schedule do
       showtimes ++ fetch_schedule_from_theater(name, from, until)
     end)
     |> Enum.sort_by(&{&1.film_name, &1.cinema_name, &1.start_time})
+    |> encode_csv_to_string()
+    |> write_showtimes(output)
+  end
+
+  defp encode_csv_to_string(csv_lines) do
+    csv_lines
     |> CSV.encode(headers: @csv_headers)
     |> Enum.join("")
     |> String.replace("\r\n", "\n")
     |> String.trim()
-    |> IO.puts()
+  end
+
+  defp write_showtimes(csv_string, :stdout) do
+    IO.puts(csv_string)
+  end
+
+  defp write_showtimes(csv_string, outfile) do
+    File.write(outfile, csv_string)
   end
 
   defp parse_date_from_flags(flags, :from) do
@@ -70,10 +85,18 @@ defmodule Mix.Tasks.Schedule do
 
   defp fetch_schedule_from_theater(theater_name, from, until) do
     with {:ok, response_body} <- fetch_response_body(theater_name),
-         {:ok, json} <- Jason.decode(response_body),
+         {:ok, json} <- parse_response_body(response_body),
          {:ok, showtimes} <- parse_showtimes_from_json(json, from, until) do
       showtimes
     else
+      {:error, :null_response} ->
+        Logger.warning("Null response for #{theater_name}")
+        []
+
+      {:error, %HTTPoison.Error{reason: :timeout}} ->
+        Logger.warning("Timed out fetching feed for #{theater_name}")
+        []
+
       {:error, response} ->
         Logger.warning("Problem fetching feed for #{theater_name}")
         Logger.warning(response.body)
@@ -88,6 +111,14 @@ defmodule Mix.Tasks.Schedule do
     with {:ok, response} <- HTTPoison.get(theater_feed, [], hackney: [:insecure]) do
       {:ok, response.body}
     end
+  end
+
+  def parse_response_body("null") do
+    {:error, :null_response}
+  end
+
+  def parse_response_body(response_body) do
+    Jason.decode(response_body)
   end
 
   defp parse_showtimes_from_json(json, from, until) do
